@@ -1867,6 +1867,54 @@ var adDomains = [
   'zz.bdstatic.com'
 ]
 
+var whiteDomains = [
+  's3-ap-southeast-2.amazonaws.com',
+  'aliyun.com',
+  'baidu.com',
+  'bing.com',
+  'chinaso.com',
+  'chinaz.com',
+  'dl.google.com',
+  'kh.google.com',
+  'khm.google.com',
+  'khm0.google.com',
+  'khm1.google.com',
+  'khm2.google.com',
+  'khm3.google.com',
+  'khmdb.google.com',
+  'tools.google.com',
+  'fonts.googleapis.com',
+  'khm.googleapis.com',
+  'khm0.googleapis.com',
+  'khm1.googleapis.com',
+  'khm2.googleapis.com',
+  'khm3.googleapis.com',
+  'khmdb.googleapis.com',
+  'storage.googleapis.com',
+  'update.googleapis.com',
+  'cn.gravatar.com',
+  'connectivitycheck.gstatic.com',
+  'csi.gstatic.com',
+  'fonts.gstatic.com',
+  'haosou.com',
+  'ip.cn',
+  'jike.com',
+  'google.cn',
+  'http2.golang.org',
+  'gov.cn',
+  'qq.com',
+  'sina.cn',
+  'sina.com.cn',
+  'sogou.com',
+  'so.com',
+  'soso.com',
+  'uluai.com.cn',
+  'weibo.com',
+  'yahoo.cn',
+  'youdao.com',
+  'zhongsou.com'
+]
+
 // https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 // gfw block domains
 var blockDomains = [
@@ -2081,6 +2129,10 @@ function loopc (List, host, Rex) {
 function FindProxyForURL (url, host) {
   var tunnel = ''
   tunnel = loopc(adDomains, host, 'PROXY 0.0.0.0;')
+  if (tunnel !== false) {
+    return tunnel
+  }
+  tunnel = loopc(whiteDomains, host, 'DIRECT;')
   if (tunnel !== false) {
     return tunnel
   }
