@@ -2102,7 +2102,73 @@ var blockDomains = [
   'youtubegaming.com',
   'yt.be',
   'ytimg.com',
-  'zynamics.com'
+  'zynamics.com',
+  // --- google end ---
+  // --- wikipedia ---
+  'zh.wikipedia.org',
+  'zh.m.wikipedia.org',
+  'wuu.wikipedia.org',
+  'zh-yue.wikipedia.org',
+  // --- wikipedia end ---
+  // --- telegram ---
+  't.me',
+  'updates.tdesktop.com',
+  'telegram.dog',
+  'telegram.me',
+  'telegram.org',
+  'telegramdownload.com',
+  //  ---telegram end ---
+  // ---Twitter---
+  'periscope.tv',
+  'pscp.tv',
+  'pscp.tv',
+  't.co',
+  't.co',
+  'twimg.com',
+  'twitter.com',
+  'twitter.com',
+  'twitter.jp',
+  'vine.co',
+  // ---Twitter end---
+  // ---Facebook---
+  'cdninstagram.com',
+  'cdninstagram.com',
+  'facebook.br',
+  'facebook.com',
+  'facebook.com',
+  'v6.facebook.com',
+  'facebook.design',
+  'connect.facebook.net',
+  'facebook.hu',
+  'facebook.in',
+  'facebook.nl',
+  'facebook.se',
+  'fb.com',
+  'fb.me',
+  'fbcdn.net',
+  'fbsbx.com',
+  'instagram.com',
+  'instagram.com',
+  'm.me',
+  'messenger.com',
+  'oculus.com',
+  'oculuscdn.com',
+  'rocksdb.org',
+  'ip6.static.sl-reverse.com',
+  'thefacebook.com',
+  'whatsapp.net',
+  // ---Facebook end---
+  // --- other ---
+  's3.amazonaws.com',
+  'facebook.com',
+  'flickr.com',
+  'staticflickr.com',
+  'gist.github.com',
+  'wsgzao.github.io',
+  'cthlo.github.io',
+  'haoel.github.io',
+  'onionhacker.github.io',
+  'sodatea.github.io'
 ]
 
 function suffix (s1, s2) {
