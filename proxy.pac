@@ -2159,6 +2159,9 @@ var blockDomains = [
   'whatsapp.net',
   // ---Facebook end---
   // --- other ---
+  'dropbox.com',
+  'dl.dropboxusercontent.com',
+  'medium.com',
   's3.amazonaws.com',
   'facebook.com',
   'flickr.com',
