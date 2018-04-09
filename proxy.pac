@@ -4,6 +4,7 @@ var proxy = 'PROXY proxy.pac.oonnnoo.com:8118;SOCKS5 proxy.pac.oonnnoo.com:1080;
 // https://github.com/neko-dev/neohosts
 // ad domains
 var adDomains = [
+  'test-ad.pac.oonnnoo.com',
   '0.r.msn.com',
   '1100.adsina.allyes.com',
   '1148.adsina.allyes.com',
@@ -1870,6 +1871,7 @@ var adDomains = [
 ]
 
 var whiteDomains = [
+  'test-white.pac.oonnnoo.com',
   's3-ap-southeast-2.amazonaws.com',
   'aliyun.com',
   'baidu.com',
@@ -1920,6 +1922,7 @@ var whiteDomains = [
 // https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 // gfw block domains
 var blockDomains = [
+  'test-block.pac.oonnnoo.com',
   // --- google ---
   '1e100.net',
   '466453.com',
