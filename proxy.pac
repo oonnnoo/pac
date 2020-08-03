@@ -1,10 +1,17 @@
 // https://pac.oonnnoo.com
-var proxy = 'PROXY proxy.pac.oonnnoo.com:8118;SOCKS5 proxy.pac.oonnnoo.com:1080;'
+var proxy = [
+  'SOCKS5 192.168.50.181:1080',
+  'SOCKS5 192.168.2.154:1080',
+  'PROXY 192.168.50.181:1080',
+  'PROXY 192.168.2.154:1080',
+  'SOCKS5 pac-socks.oonnnoo.com:1080',
+  'PROXY pac-proxy.oonnnoo.com:1080',
+].join(';');
 
 // https://github.com/neko-dev/neohosts
 // ad domains
 var adDomains = [
-  'test-ad.pac.oonnnoo.com',
+  'pac-ad.oonnnoo.com',
   '0.r.msn.com',
   '1100.adsina.allyes.com',
   '1148.adsina.allyes.com',
@@ -1867,11 +1874,11 @@ var adDomains = [
   'zvs1.cnzz.com',
   'zvs2.cnzz.com',
   'zymo.mps.weibo.com',
-  'zz.bdstatic.com'
-]
+  'zz.bdstatic.com',
+];
 
 var whiteDomains = [
-  'test-white.pac.oonnnoo.com',
+  'pac-white.oonnnoo.com',
   's3-ap-southeast-2.amazonaws.com',
   'aliyun.com',
   'baidu.com',
@@ -1916,13 +1923,13 @@ var whiteDomains = [
   'weibo.com',
   'yahoo.cn',
   'youdao.com',
-  'zhongsou.com'
-]
+  'zhongsou.com',
+];
 
 // https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 // gfw block domains
 var blockDomains = [
-  'test-block.pac.oonnnoo.com',
+  'pac-block.oonnnoo.com',
   // --- google ---
   '1e100.net',
   '466453.com',
@@ -2176,43 +2183,43 @@ var blockDomains = [
   'cthlo.github.io',
   'haoel.github.io',
   'onionhacker.github.io',
-  'sodatea.github.io'
-]
+  'sodatea.github.io',
+];
 
-function suffix (s1, s2) {
-  var s3 = '.' + s2
-  var hit = s1.indexOf(s3, s1.length - s3.length) !== -1
+function suffix(s1, s2) {
+  var s3 = '.' + s2;
+  var hit = s1.indexOf(s3, s1.length - s3.length) !== -1;
   if (hit === true) {
-    return true
+    return true;
   }
   if (s1 === s2) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
-function loopc (List, host, Rex) {
+function loopc(List, host, Rex) {
   for (var i in List) {
     if (suffix(host, List[i])) {
-      return Rex
+      return Rex;
     }
   }
-  return false
+  return false;
 }
 
-function FindProxyForURL (url, host) {
-  var tunnel = ''
-  tunnel = loopc(adDomains, host, 'PROXY 0.0.0.0;')
+function FindProxyForURL(url, host) {
+  var tunnel = '';
+  tunnel = loopc(adDomains, host, 'PROXY 0.0.0.0;');
   if (tunnel !== false) {
-    return tunnel
+    return tunnel;
   }
-  tunnel = loopc(whiteDomains, host, 'DIRECT;')
+  tunnel = loopc(whiteDomains, host, 'DIRECT;');
   if (tunnel !== false) {
-    return tunnel
+    return tunnel;
   }
-  tunnel = loopc(blockDomains, host, proxy)
+  tunnel = loopc(blockDomains, host, proxy);
   if (tunnel !== false) {
-    return tunnel
+    return tunnel;
   }
-  return 'DIRECT;'
+  return 'DIRECT;';
 }
